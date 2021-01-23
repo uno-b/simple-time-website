@@ -25,8 +25,7 @@
           >
         </div>
         <div class="time">
-          <span id="hour">00</span>:<span id="minutes">00</span>
-          <span id="period">AM</span>
+          <input id="time" type="text" value="00:00 AM" />
         </div>
       </div>
       <input id="name" type="text" value="Jason Gunti" />
@@ -76,16 +75,8 @@
           'Saturday',
         ];
 
-        const ids = [
-          'dayname',
-          'month',
-          'daynum',
-          'year',
-          'hour',
-          'minutes',
-          'period',
-        ];
-        const values = [week[dname], months[mo], dnum, yr, hou, min, pe];
+        const ids = ['dayname', 'month', 'daynum', 'year'];
+        const values = [week[dname], months[mo], dnum, yr];
 
         for (let i = 0; i < ids.length; i++) {
           document.getElementById(ids[i]).firstChild.nodeValue = values[i];
