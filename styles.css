@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Caravel;
+  src: url(./fonts/Caravel-Regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+i {
+  font-size: 4.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-family: Caravel, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #006600;
+  width: 300px;
+  border-radius: 1rem;
+  color: white;
+  padding: 1rem;
+  margin: auto;
+}
+
+.wrapper * {
+  margin: 0.5rem 0;
+}
+
+#name {
+  margin: 1rem 0;
+}
+
+#dayname {
+  font-size: 1.3rem;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.time {
+  font-size: 1.3rem;
+}
+
+#through {
+  margin-top: 3rem;
+}

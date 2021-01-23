@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4bf35f9237.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Time</title>
+  </head>
+  <body onload="initClock()">
+    <div class="container">
+      <div class="wrapper">
+        <i class="far fa-check-circle"></i>
+        <h1>CLEARED</h1>
+        <p id="through">---- through ----</p>
+        <span id="dayname">Day</span>
+        <div class="date">
+          <span id="month">Month</span>.<span id="daynum">00</span>.<span
+            id="year"
+            >Year</span
+          >
+        </div>
+        <div class="time">
+          <span id="hour">00</span>:<span id="minutes">00</span>
+          <span id="period">AM</span>
+        </div>
+      </div>
+      <h1 id="name">Jason Gunti</h1>
+      <h5>HEALTH SCREEN</h5>
+    </div>
+
+    <script>
+      function updateClock() {
+        let now = new Date();
+        let dname = now.getDay(),
+          mo = now.getMonth(),
+          dnum = now.getDate(),
+          yr = now.getFullYear().toString().substring(2),
+          hou = now.getHours(),
+          min = now.getMinutes(),
+          pe = 'AM';
+
+        if (hou == 0) {
+          hou = 12;
+        }
+        if (hou > 12) {
+          hou = hou - 12;
+          pe = 'PM';
+        }
+        const months = [
+          '1',
+          '2',
+          '3',
+          '4',
+          '5',
+          '6',
+          '7',
+          '8',
+          '9',
+          '10',
+          '11',
+          '12',
+        ];
+
+        const week = [
+          'Sunday',
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ];
+
+        const ids = [
+          'dayname',
+          'month',
+          'daynum',
+          'year',
+          'hour',
+          'minutes',
+          'period',
+        ];
+        const values = [week[dname], months[mo], dnum, yr, hou, min, pe];
+
+        for (let i = 0; i < ids.length; i++) {
+          document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+        }
+      }
+
+      function initClock() {
+        updateClock();
+        window.setInterval('updateClock()', 1);
+      }
+    </script>
+  </body>
+</html>
